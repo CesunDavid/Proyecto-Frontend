@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avance 1 - Gestor de Proyectos</title>
+</head>
+<body>
+  <header class="topbar">
+    <h1>ProjectFlow</h1>
+    <div class="counter-badge">
+      Total de registros: <strong id="project-counter">0</strong>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Sección 1: Captura y Validación -->
+    <section class="form-section">
+      <h2>Registrar Nuevo Proyecto</h2>
+      <form id="project-form" novalidate>
+        <div class="field">
+          <label for="nombre">Nombre del Proyecto *</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ej. Sistema de Inventarios" />
+          <small class="error-text" id="err-nombre"></small>
+        </div>
+
+        <div class="field">
+          <label for="responsable">Responsable *</label>
+          <input type="text" id="responsable" name="responsable" placeholder="Ej. Ana López" />
+          <small class="error-text" id="err-responsable"></small>
+        </div>
+
+        <div class="field">
+          <label for="prioridad">Prioridad *</label>
+          <select id="prioridad" name="prioridad">
+            <option value="">Selecciona una prioridad...</option>
+            <option value="Alta">Alta</option>
+            <option value="Media">Media</option>
+            <option value="Baja">Baja</option>
+          </select>
+          <small class="error-text" id="err-prioridad"></small>
+        </div>
+
+        <button type="submit" class="btn-submit">Guardar Proyecto</button>
+      </form>
+    </section>
+
+    <!-- Sección 2: Listado Dinámico -->
+    <section class="list-section">
+      <h2>Proyectos Registrados</h2>
+      <div id="cards-grid" class="cards-grid"></div>
+    </section>
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
